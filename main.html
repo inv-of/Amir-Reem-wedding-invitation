@@ -382,38 +382,26 @@ document.addEventListener("touchstart", tryPlay, { once: true });
   
   
 <script>
-
 window.addEventListener("load", () => {
 
-  setTimeout(() => {
+    setTimeout(() => {
 
-    startAutoScroll();
+        function smoothScroll() {
 
-  }, 2000);
+            const el = document.scrollingElement;
+
+            el.scrollTop += 2;
+
+            if (el.scrollTop + window.innerHeight < el.scrollHeight) {
+                requestAnimationFrame(smoothScroll);
+            }
+        }
+
+        smoothScroll();
+
+    }, 5000);
 
 });
-
-function startAutoScroll(){
-
-  const auto = setInterval(() => {
-
-    window.scrollBy(0, 1);
-
-    if(
-
-      window.innerHeight + window.pageYOffset >=
-      document.documentElement.scrollHeight - 2
-
-    ){
-
-      clearInterval(auto);
-
-    }
-
-  }, 18);
-
-}
-
 </script>
 </body>
 </html>
