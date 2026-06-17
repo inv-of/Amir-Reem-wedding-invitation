@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Melad & Nay Wedding Invitation</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#fcfcfc;
+      color:#DCCCAC;
+      overflow-x:hidden;
+      font-family:'Cinzel', serif;
+      position:relative;
+    }
+
+
+
+
+
+.message-icons span{
+  color:#546B41;
+}
+
+
+@keyframes floatIcons{
+
+  0%{
+    transform:translateY(0) rotate(0deg) scale(0.8);
+    opacity:0;
+  }
+
+  10%{
+    opacity:0.18;
+  }
+
+  50%{
+    opacity:0.3;
+  }
+
+  100%{
+    transform:translateY(-120vh) rotate(360deg) scale(1.2);
+    opacity:0;
+  }
+
+}
+
+    section{
+      width:100%;
+      padding:100px 20px;
+      position:relative;
+      z-index:2;
+    }
+
+    h2{
+      text-align:center;
+      font-size:52px;
+      margin-bottom:25px;
+      color:#f1ddb0;
+      font-weight:500;
+      letter-spacing:2px;
+    }
+
+
+    .hero-section{
+    width:100%;
+    height:100vh;
+
+    background-image:url("hero.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:500px;
+      height:500px;
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:50%;
+      animation:pulse 6s infinite;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      padding:60px 40px;
+      border:1px solid rgba(255,255,255,0.2);
+      background:rgba(0,0,0,0.2);
+      backdrop-filter:blur(6px);
+      animation:fadeUp 2s ease;
+      max-width:750px;
+    }
+
+    .hero h1{
+      font-family:'Great Vibes', cursive;
+      font-size:100px;
+      color: #546B41;
+      font-weight:400;
+      animation:glow 3s infinite alternate;
+    }
+
+    .hero p{
+      margin-top:15px;
+      font-size:24px;
+      letter-spacing:4px;
+      color:#DCCCAC;
+    }
+
+    .date{
+      margin-top:35px;
+      font-size:26px;
+      line-height:2;
+      color:#DCCCAC;
+    }
+
+
+    .countdown{
+       background-image: url("count.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+      
+      text-align:center;
+      
+      position:relative;
+      overflow:hidden;
+    }
+.h3{
+    text-align:center;
+    font-family:'Aref Ruqaa', serif;
+    font-size:2.2rem;
+    margin-bottom:25px;
+}
+
+.countdown-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+    margin-bottom:60px;
+    direction:rtl;
+}
+
+.time-unit{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.number{
+    font-family:'Aref Ruqaa', serif;
+    font-size:3rem;
+    color:#7A5C45;
+    line-height:1;
+}
+
+.label{
+    font-family:'Aref Ruqaa', serif;
+    font-size:1.4rem;
+    color:#7A5C45;
+    margin-top:8px;
+}
+
+    .location{
+    background-image:url("location.png");
+    background-size:100% auto;
+    background-repeat:no-repeat;
+    background-position:center top;
+}
+
+  
+
+    .location-text{
+      color: #7A5C45;
+      font-size:26px;
+      line-height:2;
+      margin-bottom:10px;
+      text-align:center;
+    }
+
+    .map{
+      max-width:950px;
+      margin:auto;
+      border-radius:25px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.15);
+      box-shadow:0 0 30px rgba(0,0,0,0.6);
+      transition:0.5s;
+    }
+
+    .map:hover{
+      transform:scale(1.01);
+      box-shadow:0 0 40px rgba(255,231,176,0.2);
+    }
+
+    iframe{
+      width:100%;
+  height:500px;
+  border:0;
+    }
+
+
+    .photo-section{
+    width:100%;
+    margin:0;
+    padding:0;
+    opacity:1;
+    transform:none;
+}
+
+.photo-section img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.photo-section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+    
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes glow{
+      from{
+        text-shadow:0 0 10px rgba(255,231,176,0.3);
+      }
+
+      to{
+        text-shadow:0 0 25px rgba(255,231,176,0.8);
+      }
+    }
+
+    @keyframes pulse{
+      0%{
+        transform:scale(0.9);
+        opacity:0.3;
+      }
+
+      50%{
+        transform:scale(1);
+        opacity:0.1;
+      }
+
+      100%{
+        transform:scale(1.1);
+        opacity:0;
+      }
+    }
+
+
+    @media(max-width:768px){
+
+      section{
+        padding:80px 18px;
+      }
+
+      h2{
+        font-size:38px;
+      }
+
+      .hero h1{
+        font-size:65px;
+      }
+
+      .hero p{
+        font-size:18px;
+        letter-spacing:2px;
+      }
+
+      .date{
+        font-size:20px;
+      }
+
+      .hero-content{
+        padding:40px 25px;
+      }
+
+
+      .location-text{
+        font-size:20px;
+      }
+
+      iframe{
+        height:280px;
+      }
+
+    }
+
+
+
+
+  </style>
+
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" autoplay loop playsinline>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+function tryPlay() {
+  music.play().catch(() => {});
+}
+
+window.addEventListener("load", () => {
+  tryPlay();
+});
+
+document.addEventListener("scroll", tryPlay, { once: true });
+document.addEventListener("mousemove", tryPlay, { once: true });
+document.addEventListener("touchstart", tryPlay, { once: true });
+</script>
+
+
+  
+
+  <section class="hero-section"></section>
+
+
+
+
+  <section class="location">
+<br><br><br><br>
+
+
+    <div class="location-text">
+      Hilton hotel green plaza <br>
+    </div>
+
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.5131634120853!2d29.9655222!3d31.2065093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c4b1d6566141%3A0xdf501bb33b6e7711!2sHilton%20Alexandria%20Green%20Plaza!5e0!3m2!1sen!2seg!4v1781540088323!5m2!1sen!2seg" 
+      width="250" 
+      height="225" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="photo-section">
+    <img src="message.png" alt="">
+</section>
+
+
+<!-- ================= AUTO SCROLL ================= -->
+
+<script>
+
+window.addEventListener("load", () => {
+
+  setTimeout(() => {
+
+    startAutoScroll();
+
+  }, 5000);
+
+});
+
+function startAutoScroll(){
+
+  const auto = setInterval(() => {
+
+    window.scrollBy(0, 1);
+
+    if(
+
+      window.innerHeight + window.pageYOffset >=
+      document.documentElement.scrollHeight - 2
+
+    ){
+
+      clearInterval(auto);
+
+    }
+
+  }, 18);
+
+}
+
+</script>
+
+
+
+</body>
+</html>
